@@ -84,8 +84,10 @@ class Latest_fetch extends \Controller\Make_Controller {
 
             if (!isset($tmb)) {
                 if (isset($match[0])) {
-                    $src = str_replace('/data/'.PH_PLUGIN_CKEDITOR.'/', '/data/'.PH_PLUGIN_CKEDITOR.'/thumb/', $match[1]);
-                    $tmb = $src;
+                    if (!strstr($match[1], '/thumb/')) {
+                        $match[1] = str_replace('/data/'.PH_PLUGIN_CKEDITOR.'/', '/data/'.PH_PLUGIN_CKEDITOR.'/thumb/', $match[1]);
+                    }
+                    $tmb = $match[1];
 
                 } else {
                     $tmb = SET_BLANK_IMG;
