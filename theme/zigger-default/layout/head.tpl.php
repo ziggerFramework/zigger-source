@@ -63,9 +63,6 @@
             <?php } else { ?>
             <li><a href="<?php echo $this->layout->site_href(); ?>/sign/signout">로그아웃</a></li>
             <li><a href="<?php echo $this->layout->site_href(); ?>/member/info">회원정보</a></li>
-            <?php if ($MB['level'] == 1) { ?>
-            <li><a href="<?php echo $this->layout->site_href(); ?>/manage/">Manage</a></li>
-            <?php } ?>
             <?php } ?>
         </ul>
 

@@ -133,8 +133,12 @@ textarea{padding: 10px;width: 100%;min-height: 200px;border: 1px solid #dddddd;b
 #slide-bg{display: none;}
 #slide-menu{display: none;}
 
-#footer{line-height: 80px;border-top: 1px solid #eaeaea;margin-top: 40px;text-align: center;font-style: italic;}
-#footer .copyright{font-size: 12px;color: #cccccc;}
+#footer{border-top: 1px solid #eaeaea;padding: 40px 0;text-align: center;}
+#footer .copyright{display: block;font-size: 12px;color: #cccccc;margin-top: 10px;font-style: italic;}
+
+#fnb{text-align: center;}
+#fnb li{display: inline-block;vertical-align: top;margin: 0 10px;}
+#fnb li a{font-style: normal;letter-spacing: -1px;color: #666;}
 
 #main #content,
 #sub #content{position: relative;width: 1200px;margin: 40px auto;}
