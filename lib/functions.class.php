@@ -413,11 +413,11 @@ class Func {
         return $REL_PATH['class_name'];
     }
 
-    //htmlspecialchars_decode+br2nl 리턴 함수
-    //(mysql에서 Array된 변수값은 htmlspecialchars+nl2br이 기본 적용됨)
+    //htmlspecialchars_decode 리턴 함수
+    //(mysql에서 Array된 변수값은 htmlspecialchars이 기본 적용됨)
     static public function htmldecode($val)
     {
-        return self::deHtmlspecialchars(self::br2nl($val));
+        return self::deHtmlspecialchars($val);
     }
 
     //deHtmlspecialchars 함수
