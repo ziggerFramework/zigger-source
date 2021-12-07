@@ -238,7 +238,7 @@ CREATE TABLE IF NOT EXISTS {$req['pfx']}mod_message (
     PRIMARY KEY (idx)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `ph_mod_alarm` (
+CREATE TABLE IF NOT EXISTS {$req['pfx']}mod_alarm (
     idx int(11) NOT NULL auto_increment,
     msg_from text,
     from_mb_idx int(11) NOT NULL,
