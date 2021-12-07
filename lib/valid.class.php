@@ -285,7 +285,7 @@ class Valid {
 
                     $len_arr = array(
                         'idx' => [3, 15],
-                        'id' => [3, 15],
+                        'id' => [5, 30],
                         'password' => [5, 50],
                         'phone' => [8, 12],
                         'nickname' => [2, 12]

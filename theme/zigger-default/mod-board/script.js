@@ -216,7 +216,8 @@ cmt_stat_mdf = false;
 function view_cmt_load() {
     var comment_board_id = $('#board-readForm input[name=board_id]').val();
     var comment_read = $('#board-readForm input[name=read]').val();
-    $('#board-comment').load(MOD_BOARD_DIR + '/controller/comment/load?board_id=' + comment_board_id + '&read=' + comment_read,function() {
+    var comment_thisuri = $('#board-readForm input[name=thisuri]').val();
+    $('#board-comment').load(MOD_BOARD_DIR + '/controller/comment/load?board_id=' + comment_board_id + '&read=' + comment_read + '&thisuri=' + comment_thisuri,function() {
         if ($('.g-recaptcha').length < 1) {
             return false;
         }
@@ -297,18 +298,10 @@ $(function() {
             if ($('.g-recaptcha').length > 0) {
                 g_recaptcha_re_captcha(1);
             }
-            captcha_reload.init();
+            cmt_stat_val = 'reply';
 
         } else {
             $('#comm-re-form').hide();
-        }
-    });
-
-    $(document).on('click', '#commentForm .re_sbm', function(e) {
-        e.preventDefault();
-        if (!cmt_stat_mdf) {
-            $('#commentForm input[name=mode]').val('reply');
-            $('#commentForm').submit();
         }
     });
 });
@@ -337,8 +330,8 @@ $(function() {
             $('.comment',$(this).parents('li.comm-list-li')).append($comm_re_form);
             $('#comm-re-form',$(this).parents('li.comm-list-li')).show();
             $('#comm-re-form textarea[name=re_comment]').val(comment);
-            captcha_reload.init();
             cmt_stat_mdf = true;
+            cmt_stat_val = 'modify';
 
         } else {
             $('#comm-re-form').hide();
@@ -346,12 +339,13 @@ $(function() {
             cmt_stat_mdf = false;
         }
     });
+});
 
-    $(document).on('click', '#commentForm .re_sbm', function(e) {
-        e.preventDefault();
-        if (cmt_stat_mdf) {
-            $('#commentForm input[name=mode]').val('modify');
-            $('#commentForm').submit();
-        }
-    });
+///
+// Comment 답글 & 수정 Submit
+///
+$(document).on('click', '#comm-re-form .re_sbm, #commentForm .re_sbm', function(e) {
+    e.preventDefault();
+    $('#commentForm input[name=mode]').val(cmt_stat_val);
+    $('#commentForm').submit();
 });

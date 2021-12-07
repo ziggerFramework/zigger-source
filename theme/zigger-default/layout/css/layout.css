@@ -3,12 +3,12 @@
 html{overflow-x: hidden;}
 
 /* Input */
-.inp{border: 1px solid #dddddd;background: #ffffff;height: 33px;line-height: 33px;padding: 0 10px;border-radius: 3px;box-sizing: border-box;}
+.inp{border: 1px solid #dddddd;background: #ffffff;height: 33px;line-height: 33px;padding: 0 10px;box-sizing: border-box;}
 .inp.w100{width: 300px;}
 .inp.wfull{width: 100%;}
 .inp.w50{min-width: 150px;}
 select.inp{padding-right: 0;}
-textarea{padding: 10px;width: 100%;min-height: 200px;border: 1px solid #dddddd;background: #ffffff;border-radius: 3px;box-sizing: border-box;}
+textarea{padding: 10px;width: 100%;min-height: 200px;border: 1px solid #dddddd;background: #ffffff;box-sizing: border-box;}
 
 /* Captcha */
 #zigger-captcha a img{width: 20px;height: auto;}
@@ -52,6 +52,12 @@ textarea{padding: 10px;width: 100%;min-height: 200px;border: 1px solid #dddddd;b
 .table_wrt tbody td p{line-height: 22px;}
 
 .tbltxt{display: block;margin: 5px 0;font-size: 12px;line-height: 18px;color: #999999;}
+
+/* Tab */
+.article-tab{margin-bottom: 40px;border-bottom: 1px solid #ddd;}
+.article-tab > li{display: inline-block;vertical-align: top;margin-right: 2px;}
+.article-tab > li a{display: block;line-height: 50px;text-align: center;padding: 0 60px;background: #f7f7f7;font-size: 15px;color: #999;text-decoration: none;font-weight: 300;}
+.article-tab > li.on a{background: #fff;color: #333;border: 1px solid #ddd;border-bottom: none;margin-bottom: -1px;}
 
 /* Paging */
 .paging{text-align: center;margin-top: 30px;}
@@ -127,6 +133,7 @@ textarea{padding: 10px;width: 100%;min-height: 200px;border: 1px solid #dddddd;b
 #tnb{position: absolute;top: 35px;right: 0;}
 #tnb li{display: inline-block;margin-left: 3px;vertical-align: top;}
 #tnb li a{display: block;padding: 0 15px;line-height: 24px;background: #444263;border: 1px solid #444263;color: #fff;letter-spacing: -1px;font-size: 12px;border-radius: 26px;text-decoration: none;}
+#tnb li a em{font-style: normal;margin-left: 5px;color: #dddddd;font-weight: 600;display: inline-block;vertical-align: top;}
 #tnb li:first-child a{background: #fff;border: 1px solid #444263;color: #444263;font-weight: 600;}
 
 #slide-btn{display: none;}
@@ -219,6 +226,16 @@ textarea{padding: 10px;width: 100%;min-height: 200px;border: 1px solid #dddddd;b
 #policy-agree-box h4{display: block;margin-bottom: 25px;font-size: 20px;color: #333;font-weight: 300;letter-spacing: -1px;}
 .agreebox{display: block;font-size: 14px;line-height: 23px;color: #333;white-space: pre-line;letter-spacing: -1px;}
 
+/* Mypage */
+.mypagebox{text-align: center;border: 1px solid #ccc;margin-bottom: 50px;padding: 20px;border-radius: 10px;box-shadow: 0 0 15px rgba(0,0,0,0.05);}
+.mypagebox > li{display: inline-block;vertical-align: top;width: 25%;padding: 20px 0;position: relative;}
+.mypagebox > li:before{content: '';display: block;position: absolute;top: 0;left: 0;width: 1px;height: 100%;background: #ddd;}
+.mypagebox > li:first-child:before{display: none;}
+.mypagebox > li h5{text-align: center;font-size: 18px;color: #333;font-weight: 300;letter-spacing: -1px;margin-bottom: 10px;}
+.mypagebox > li .txt{display: block;text-align: center;font-size: 15px;color: #666;letter-spacing: -1px;margin-bottom: 20px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.mypagebox > li .txt strong{margin-right: 5px;font-size: 26px;font-weight: 600;color: #f13039;}
+.mypagebox > li .txt strong.black{color: #333;}
+.mypagebox > li .btn2 i{margin-left: 15px;color: #999;font-size: 12px;}
 
 /* Blocked */
 #blocked{width: 700px;margin: 100px auto;}

@@ -7,6 +7,34 @@ use Corelib\Blocked;
 use Make\Database\Pdosql;
 use Make\Library\Mail;
 use Make\Library\Paging;
+use Module\Message\Library as Message_Library;
+use Module\Alarm\Library as Alarm_Library;
+
+/***
+Index
+***/
+class Index extends \Controller\Make_Controller {
+
+    public function init()
+    {
+        $this->layout()->head();
+        $this->layout()->view(PH_THEME_PATH.'/html/member/index.tpl.php');
+        $this->layout()->foot();
+    }
+
+    public function make()
+    {
+        global $MB;
+
+        $Message_Library = new Message_Library();
+        $Alarm_Library = new Alarm_Library();
+
+        $this->set('message_new_count', Func::number($Message_Library->get_new_count()));
+        $this->set('alarm_new_count', Func::number($Alarm_Library->get_new_count()));
+        $this->set('point_total_count', Func::number($MB['point']));
+    }
+
+}
 
 /***
 Info

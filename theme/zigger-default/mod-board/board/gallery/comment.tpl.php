@@ -3,6 +3,7 @@
 	<input type="hidden" name="board_id" value="<?php echo $board_id; ?>" />
 	<input type="hidden" name="read" value="<?php echo $read; ?>" />
 	<input type="hidden" name="cidx" value="" />
+	<input type="hidden" name="thisuri" value="<?php echo $thisuri; ?>" />
 
 	<!-- total -->
 	<span class="total"><strong><?php echo $total_cnt; ?></strong> 개의 댓글이 등록되어 있습니다.</span>

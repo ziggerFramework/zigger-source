@@ -414,7 +414,7 @@ class Func {
     }
 
     //htmlspecialchars_decode 리턴 함수
-    //(mysql에서 Array된 변수값은 htmlspecialchars이 기본 적용됨)
+    //(mysql에서 Array된 변수값은 htmlspecialchars 기본 적용됨)
     static public function htmldecode($val)
     {
         return self::deHtmlspecialchars($val);

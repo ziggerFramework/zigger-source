@@ -1,6 +1,8 @@
-<div class="tblform">
+<div id="sub-tit">
+	<h2><?php echo $MB['name']; ?>님의 포인트 내역</h2>
+</div>
 
-	<h4><?php echo $MB['name']; ?>님의 포인트 내역</h4>
+<div class="tblform">
 
 	<div class="mypoint">
 		회원님은 현재 <strong><?php echo $total_point; ?></strong> 포인트 보유 중입니다.

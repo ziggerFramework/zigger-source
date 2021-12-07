@@ -204,7 +204,7 @@ textarea{width: 100%;height: 200px;border: 1px solid #dddddd;font-size: 13px;lin
 .theme-list .info li a{display: block;font-size: 12px;line-height: 18px;color: #999999;letter-spacing: -1px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
 
 .mod-list{margin: -5px;}
-.mod-list > li{position: relative;display: inline-block;margin: 5px;width: 250px;border: 1px solid #eeeeee;box-shadow: 0 0 10px rgba(0,0,0,0.05);border-radius: 4px;overflow: hidden;}
+.mod-list > li{position: relative;display: inline-block;vertical-align: top;margin: 5px;width: 250px;min-height: 210px;border: 1px solid #eeeeee;box-shadow: 0 0 10px rgba(0,0,0,0.05);border-radius: 4px;overflow: hidden;}
 .mod-list .tit{display: block;padding: 10px 15px;font-size: 13px;color: #ffffff;font-weight: 300;background: #53556f;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
 .mod-list .tit em{font-size: 11px;font-style: normal;font-weight: normal;}
 .mod-list .info{padding: 15px;}

@@ -22,11 +22,13 @@
                 <li><strong>버전</strong><p><?php echo $list['version']; ?></p></li>
                 <li><strong>제작일</strong><p><?php echo $list['develDate']; ?></p></li>
                 <li><strong>업데이트일</strong><p><?php echo $list['updateDate']; ?></p></li>
-                <li><strong>제작자 web</strong><p><?php echo $list['website']; ?></p></li>
+                <li><strong>제작자 web</strong><a href="<?php echo $list['website']; ?>" target="_blank"><p><?php echo $list['website']; ?></p></a></li>
             </ul>
+            <?php if (isset($list['golink'])) { ?>
             <div class="btn-wrap mt0 mb10">
                 <a href="<?php echo PH_MANAGE_DIR; ?>/mod/<?php echo $list['module']; ?>/<?php echo $list['golink']; ?>" class="btn2 small">모듈 보기</a>
             </div>
+            <?php } ?>
         </li>
         <?php } ?>
     </ul>

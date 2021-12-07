@@ -16,6 +16,12 @@
   .btn2,
   .btn3{min-width: 80px;height: 35px;line-height: 35px;text-align: center;font-size: 13px;letter-spacing: -1px;dding: 0 15px;}
 
+  /* Tab */
+  .article-tab{margin-bottom: 20px;white-space: nowrap;overflow-x: auto;border-bottom: none;}
+  .article-tab > li{margin-right: 0;width: 50%;}
+  .article-tab > li a{line-height: 40px;padding: 0;font-size: 13px;box-sizing: border-box;}
+  .article-tab > li.on a{border: 1px solid #ddd;line-height: 38px;}
+
   /* Table */
   .table colgroup{display: none;}
   .table tr > *{padding: 10px 5px;font-size: 12px;line-height: 18px;letter-spacing: -1px;}
@@ -74,10 +80,11 @@
   #slide-btn.on button:before{top: 50%;margin-top: -1px;transform: rotate(45deg);}
   #slide-btn.on button:after{bottom: 50%;margin-bottom: -1px;transform: rotate(-45deg);}
 
-  #mo-tnb{margin-bottom: 10px;border: 1px solid #eaeaea;border-bottom-width: 2px;border-radius: 4px;overflow: hidden;}
-  #mo-tnb li{display: inline-block;width: 50%;box-sizing: border-box;border-left: 1px solid #dddddd;}
+  #mo-tnb{margin-bottom: 10px;border: 1px solid #dddddd;border-width: 1px 0 0 1px;border-radius: 4px;overflow: hidden;}
+  #mo-tnb li{display: inline-block;width: 50%;box-sizing: border-box;border: 1px solid #dddddd;border-width: 0 1px 1px 0;}
   #mo-tnb li:first-child{border-left: none;}
   #mo-tnb li a{display: block;line-height: 35px;text-align: center;font-size: 13px;letter-spacing: -1px;color: #666666;background: #f7f7f7;text-decoration: none;}
+  #mo-tnb li a em{font-style: normal;margin-left: 5px;font-weight: 600;color: #000;}
 
   #mo-gnb{margin: 0 -10px;}
   #mo-gnb > li{border-bottom: 1px solid #eaeaea;}
@@ -156,6 +163,15 @@
 
   #policy-agree-box{font-size: 13px;line-height: 20px;}
   #policy-agree-box h4{margin-bottom: 10px;font-size: 15px;}
+
+  /* Mypage */
+  .mypagebox{margin-bottom: 20px;padding: 0;border-radius: 0;border-width: 1px 0 0 1px;border-color: #eeeeee;}
+  .mypagebox > li{width: 50%;padding: 25px 0;border: 1px solid #eeeeee;border-width: 0 1px 1px 0;box-sizing: border-box;}
+  .mypagebox > li:before{display: none;}
+  .mypagebox > li h5{display: none;}
+  .mypagebox > li .txt{font-size: 13px;margin-bottom: 10px;}
+  .mypagebox > li .txt strong{font-size: 14px;}
+  .mypagebox > li .btn2 i{margin-left: 10px;font-size: 11px;}
 
   /* Blocked */
   #blocked{width: auto;margin: 40px 20px;}

@@ -10,6 +10,7 @@ use Make\Library\Imgresize;
 use Make\Library\Mail;
 use Make\Database\Pdosql;
 use Module\Board\Library as Board_Library;
+use Module\Alarm\Library as Alarm_Library;
 
 class Write extends \Controller\Make_Controller {
 
@@ -953,6 +954,7 @@ class Write_submit{
 
         $sql = new Pdosql();
         $mail = new Mail();
+        $Alarm_Library = new Alarm_Library();
 
         //ln값 처리
         $ln_max = (int)$org_arr['ln'];
@@ -1053,6 +1055,19 @@ class Write_submit{
                 array(
                     'from' => $MODULE_BOARD_CONF['title'],
                     'msg' => '<strong>'.$req['writer'].'</strong>님이 <strong>'.Write::$boardconf['title'].'</strong> 게시판에 새로운 답글을 등록했습니다.',
+                    'link' => $req['thisuri'].'?mode=view&read='.$sql->fetch('idx')
+                )
+            );
+        }
+
+        //원글 작성자에게 알림 발송
+        if ($req['wrmode'] == 'reply' && $org_arr['mb_idx'] > 0 && $org_arr['mb_idx'] != $MB['idx']) {
+            $Alarm_Library->get_add_alarm(
+                array(
+                    'msg_from' => '게시판 ('.Write::$boardconf['title'].')',
+                    'from_mb_idx' => $MB['idx'],
+                    'to_mb_idx' => $org_arr['mb_idx'],
+                    'memo' => '<strong>'.$req['writer'].'</strong>님이 회원님의 게시글에 답글을 작성했습니다.',
                     'link' => $req['thisuri'].'?mode=view&read='.$sql->fetch('idx')
                 )
             );

@@ -7,6 +7,7 @@ use Corelib\Valid;
 use Make\Library\Paging;
 use Make\Database\Pdosql;
 use Module\Board\Library as Board_Library;
+use Module\Alarm\Library as Alarm_Library;
 
 /***
 Comment
@@ -88,7 +89,7 @@ class Load extends \Controller\Make_Controller {
         $paging = new Paging();
         $boardlib = new Board_Library();
 
-        $req = Method::request('get','board_id, read');
+        $req = Method::request('get','board_id, read, thisuri');
 
         $board_id = $req['board_id'];
 
@@ -175,6 +176,7 @@ class Load extends \Controller\Make_Controller {
             $this->set('print_arr', $print_arr);
             $this->set('board_id', $board_id);
             $this->set('read', $req['read']);
+            $this->set('thisuri', $req['thisuri']);
             $this->set('total_cnt', $total_cnt);
         }
     }
@@ -197,7 +199,7 @@ class Comment_submit {
 
     public function init()
     {
-		global $MB, $req, $boardconf, $board_id;
+		global $MB, $req, $view, $boardconf, $board_id;
 
         $sql = new Pdosql();
 
@@ -205,7 +207,7 @@ class Comment_submit {
 
         Method::security('referer');
         Method::security('request_post');
-        $req = Method::request('post', 'mode, board_id, read, cidx, writer, comment, re_writer, re_comment, cmt_1, cmt_2, cmt_3, cmt_4, cmt_5, cmt_6, cmt_7, cmt_8, cmt_9, cmt_10');
+        $req = Method::request('post', 'mode, board_id, read, thisuri, cidx, writer, comment, re_writer, re_comment, cmt_1, cmt_2, cmt_3, cmt_4, cmt_5, cmt_6, cmt_7, cmt_8, cmt_9, cmt_10');
 
         $board_id = $req['board_id'];
 
@@ -263,9 +265,10 @@ class Comment_submit {
 	///
     private function get_write()
     {
-        global $MB, $req, $board_id;
+        global $MB, $view, $req, $boardconf, $board_id;
 
         $sql = new Pdosql();
+        $Alarm_Library = new Alarm_Library();
 
         //check
         if (IS_MEMBER) {
@@ -327,6 +330,19 @@ class Comment_submit {
             )
         );
 
+        //게시글 작성자에게 알림 발송
+        if ($view['mb_idx'] > 0 && $view['mb_idx'] != $MB['idx']) {
+            $Alarm_Library->get_add_alarm(
+                array(
+                    'msg_from' => '게시판 ('.$boardconf['title'].')',
+                    'from_mb_idx' => $MB['idx'],
+                    'to_mb_idx' => $view['mb_idx'],
+                    'memo' => '<strong>'.$writer.'</strong>님이 회원님의 게시글에 댓글을 남겼습니다.',
+                    'link' => $req['thisuri'].'?mode=view&read='.$req['read']
+                )
+            );
+        }
+
         //return
         Valid::set(
             array(
@@ -342,9 +358,10 @@ class Comment_submit {
 	///
     private function get_reply()
     {
-        global $MB, $req, $board_id;
+        global $MB, $req, $boardconf, $board_id;
 
         $sql = new Pdosql();
+        $Alarm_Library = new Alarm_Library();
 
         //check
         if (IS_MEMBER) {
@@ -372,7 +389,7 @@ class Comment_submit {
             )
         );
 
-        //원본 글 정보
+        //원본 코멘트 정보
         $sql->query(
             "
             SELECT *
@@ -383,6 +400,7 @@ class Comment_submit {
                 $req['cidx']
             )
         );
+        $comm_arr = $sql->fetchs();
         $bo_idx = (int)$sql->fetch('bo_idx');
 
         //rn 값 처리
@@ -445,6 +463,19 @@ class Comment_submit {
                 $ln_isrt, $rn_next, $req['read'], $mb_idx, $writer, $req['re_comment'], $req['cmt_1'], $req['cmt_2'], $req['cmt_3'], $req['cmt_4'], $req['cmt_5'], $req['cmt_6'], $req['cmt_7'], $req['cmt_8'], $req['cmt_9'], $req['cmt_10']
             )
         );
+
+        //부모 댓글 작성자에게 알림 발송
+        if ($comm_arr['mb_idx'] > 0 && $comm_arr['mb_idx'] != $MB['idx']) {
+            $Alarm_Library->get_add_alarm(
+                array(
+                    'msg_from' => '게시판 ('.$boardconf['title'].')',
+                    'from_mb_idx' => $MB['idx'],
+                    'to_mb_idx' => $comm_arr['mb_idx'],
+                    'memo' => '<strong>'.$writer.'</strong>님이 회원님의 댓글에 대댓글을 남겼습니다.',
+                    'link' => $req['thisuri'].'?mode=view&read='.$req['read']
+                )
+            );
+        }
 
         //return
         Valid::set(

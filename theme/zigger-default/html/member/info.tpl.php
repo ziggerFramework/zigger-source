@@ -1,8 +1,10 @@
+<div id="sub-tit">
+	<h2><?php echo $MB['name']; ?>님의 회원 정보 관리</h2>
+</div>
+
 <div class="tblform">
     <form <?php echo $this->form(); ?>>
         <input type="hidden" name="mode" value="mdf" />
-
-        <h4>회원정보 조회</h4>
 
         <!-- 활동정보 -->
         <fieldset>

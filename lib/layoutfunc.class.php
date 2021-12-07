@@ -2,6 +2,8 @@
 namespace Make\View;
 
 use Corelib\Func;
+use Module\Message\Library as Message_Library;
+use Module\Alarm\Library as Alarm_Library;
 
 class Layout {
 
@@ -14,6 +16,20 @@ class Layout {
     public function site_href()
     {
         return PH_DOMAIN;
+    }
+
+    public function message_new_count()
+    {
+        $Message_Library = new Message_Library();
+
+        return Func::number($Message_Library->get_new_count());
+    }
+
+    public function alarm_new_count()
+    {
+        $Alarm_Library = new Alarm_Library();
+
+        return Func::number($Alarm_Library->get_new_count());
     }
 
     public function logo_src()

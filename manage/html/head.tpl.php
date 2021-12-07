@@ -110,6 +110,7 @@
             <ul class="menu">
                 <?php
                 foreach ($gnb_arr as $key => $value) {
+                    if (count($gnb_arr[$key]) < 3) continue;
                 ?>
                 <li>
                     <a href="#"><?php echo $gnb_arr[$key]['name']; ?></a>

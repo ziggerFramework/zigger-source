@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+#message-send{display: none;position: fixed;top: 50%;left: 50%;z-index: 301;padding-top: 55px;margin-top: -300px;margin-left: -350px;width: 700px;height: 600px;background: #fff;overflow: hidden;box-shadow: 0 0 20px rgba(0,0,0,0.1);box-sizing: border-box;}
+#message-send .tit{position: absolute;top: 0;left: auto;z-index: 302;width: 100%;line-height: 55px;padding: 0 25px;background: #333333;box-sizing: border-box;box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
+#message-send .tit h2{color: #ffffff;font-size: 16px;font-weight: normal;}
+#message-send .tit .close{display: block;position: absolute;top: 0;right: 0;width: 55px;height: 55px;line-height: 55px;text-decoration: none;font-size: 16px;color: #ffffff;text-align: center;}
+#message-send .cont{height: 100%;padding: 30px;overflow-y: auto;box-sizing: border-box;}
+#message-send .tbl{width: 100%;}
+#message-send .tbl tbody tr > *{padding: 10px;border-bottom:1px solid #f7f7f7;font-size: 13px;}
+#message-send .tbl tbody th{text-align: left;color: #000000;font-weight: normal;}
+#message-send .tbl tbody td{color: #999999;}
+#message-send .sment{display: block;line-height: 50px;text-align: center;font-size: 13px;}
+
+#message-send .btn{text-align: center;}
+#message-send-bg{display: none;position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 300;background: rgba(0,0,0,0.2);}
+
+.msg-history{margin-top: 40px;padding-left: 20px;}
+.msg-history li{padding: 30px;margin: 0 0 -1px 0;border: 1px solid #ddd;background: #fafafa;}
+.msg-history li p{font-size: 13px;}
+.msg-history li .name{display: block;margin-bottom: 5px;font-size: 13px;color: #333;font-weight: 300;}
+.msg-history li .date{display: block;margin-top: 10px;font-size: 13px;color: #999;}
+
+/* for mobile */
+@media screen and (max-width: 1000px){
+
+    #message-send{top: 20%;left: 5%;margin-top: 0;margin-left: 0;width: 90%;height: 60%;padding-top: 45px;}
+    #message-send .tit{line-height: 45px;padding: 0 15px;}
+    #message-send .tit h2{font-size: 14px;}
+    #message-send .tit .close{width: 45px;height: 45px;line-height: 45px;}
+    #message-send .cont{padding: 15px;}
+    #message-send .tbl colgroup{display: none;}
+    #message-send .tbl tbody th{font-size: 12px;width: 50px;}
+    #message-send .tbl tbody td{font-size: 12px;}
+
+    .msg-history{margin-top: 20px;padding-left: 10px;}
+    .msg-history li{padding: 15px;}
+
+}
