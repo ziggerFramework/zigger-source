@@ -1,5 +1,7 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/lib/ph.core.php';
+$REAL_PATH = str_replace('\\', '/' , str_replace(basename(__FILE__), '', realpath(__FILE__)));
+$REAL_PATH = str_replace('/plugin/securimage/', '', $REAL_PATH);
+require_once $REAL_PATH.'/lib/ph.core.php';
 
 // error_reporting(E_ALL); ini_set('display_errors', 1); // uncomment this line for debugging
 

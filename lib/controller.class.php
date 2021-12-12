@@ -292,6 +292,10 @@ class Make_View_Form {
             $this->set['target'] = '';
         }
 
+        if (PH_DIR != '' && !strstr($this->set['action'], PH_DIR)) {
+            $this->set['action'] = PH_DIR.$this->set['action'];
+        }
+
         switch ($this->set['type']) {
 
             case 'static' :
