@@ -379,7 +379,7 @@ class View_submit{
                 'msg' => '성공적으로 답변이 발송 되었습니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
     ///
@@ -439,7 +439,7 @@ class View_submit{
                 'location' => PH_MANAGE_DIR.'/mod/'.MOD_CONTACTFORM.'/result/result'.$manage->retlink('')
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }

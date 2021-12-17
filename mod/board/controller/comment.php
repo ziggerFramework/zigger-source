@@ -350,7 +350,7 @@ class Comment_submit {
                 'function' => 'view_cmt_load()'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 	///
@@ -484,7 +484,7 @@ class Comment_submit {
                 'function' => 'view_cmt_load()'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 	///
@@ -554,7 +554,7 @@ class Comment_submit {
                 'function' => 'view_cmt_load()'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 	///
@@ -661,7 +661,7 @@ class Comment_submit {
                 'function' => 'view_cmt_load()',
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }

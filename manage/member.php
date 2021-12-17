@@ -373,7 +373,7 @@ class Regist_submit {
                 'location' => PH_MANAGE_DIR.'/member/modify?idx='.$mb_idx
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }
@@ -663,7 +663,7 @@ class Modify_submit {
                 'msg' => '성공적으로 변경 되었습니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
     ///
@@ -710,7 +710,7 @@ class Modify_submit {
                 'location' => PH_MANAGE_DIR.'/member/result'.$manage->retlink('')
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }
@@ -1370,7 +1370,7 @@ class Point_submit{
                 'msg' => '성공적으로 반영 되었습니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }

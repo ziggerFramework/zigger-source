@@ -332,7 +332,7 @@ class Info_submit {
                 'msg' => '성공적으로 변경 되었습니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 }
 
@@ -482,7 +482,7 @@ class Seo_submit {
                 'msg' => '성공적으로 변경 되었습니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }
@@ -729,7 +729,7 @@ class SitemapList_submit{
                 'function' => 'sitemap_list.action(\'list_reload\');'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
     ///
@@ -803,7 +803,7 @@ class SitemapList_submit{
                 'function' => 'sitemap_list.action(\'list_reload\');'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 }
 
@@ -916,7 +916,7 @@ class SitemapModify_submit{
                 'function' => 'sitemap_list.action(\'secc_modify\');'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }

@@ -261,7 +261,7 @@ class Ctrl_submit {
                 'msg' => '성공적으로 삭제 되었습니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
     ///
@@ -524,7 +524,7 @@ class Ctrl_submit {
                 'msg' => '성공적으로 이동 되었습니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
     ///
@@ -634,7 +634,7 @@ class Ctrl_submit {
                 'msg' => '성공적으로 복사 되었습니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }

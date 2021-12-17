@@ -112,7 +112,7 @@ class Sigin_submit {
                     'location' => PH_DIR.'/sign/retry-emailchk?mb_idx='.$sql->fetch('mb_idx')
                 )
             );
-            Valid::return();
+            Valid::turn();
         }
 
         $mbinfo = array();
@@ -150,7 +150,7 @@ class Sigin_submit {
                 'location' => urldecode($req['redirect'])
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }
@@ -425,7 +425,7 @@ class signup_submit {
                 'location' => PH_DOMAIN
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }
@@ -476,7 +476,7 @@ class Signup_check_id {
                 'msg' => '사용할 수 있는 아이디입니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }
@@ -527,7 +527,7 @@ class Signup_check_email {
                 'msg' => '사용할 수 있는 이메일입니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }
@@ -561,7 +561,7 @@ class Signup_check_password {
                 'msg' => '사용할 수 있는 비밀번호입니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }
@@ -899,7 +899,7 @@ class Forgot_submit {
                 'location' => PH_DOMAIN
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }

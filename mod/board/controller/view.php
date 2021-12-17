@@ -648,7 +648,7 @@ class Get_likes {
                 'msg' => $sql->fetch('total_cnt')
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }

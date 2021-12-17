@@ -24,7 +24,7 @@ class Valid {
         }
     }
 
-    static public function return()
+    static public function turn()
     {
         switch (self::$return) {
 
@@ -162,7 +162,7 @@ class Valid {
                 'msg' => $msg
             )
         );
-        self::return();
+        self::turn();
     }
 
     //글자 수 검사

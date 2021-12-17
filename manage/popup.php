@@ -319,7 +319,7 @@ class Regist_submit{
                 'location' => PH_MANAGE_DIR.'/popup/modify?idx='.$idx
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }
@@ -518,7 +518,7 @@ class Modify_submit{
                 'msg' => '성공적으로 변경 되었습니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
     ///
@@ -564,7 +564,7 @@ class Modify_submit{
                 'location' => PH_MANAGE_DIR.'/popup/result'.$manage->retlink('')
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }

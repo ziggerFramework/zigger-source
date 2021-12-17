@@ -89,7 +89,7 @@ class Contactus_submit {
                         'err_code' => 'NOTMATCH_CAPTCHA'
                     )
                 );
-                Valid::return();
+                Valid::turn();
             }
         }
 
@@ -141,7 +141,7 @@ class Contactus_submit {
                 'msg' => '문의가 정상적으로 접수 되었습니다.',
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }

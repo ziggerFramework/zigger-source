@@ -192,7 +192,7 @@ class Ip_submit{
                 'msg' => '성공적으로 추가 되었습니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
     ///
@@ -234,7 +234,7 @@ class Ip_submit{
                 'return' => 'alert->reload'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }
@@ -449,7 +449,7 @@ class Member_submit{
                 'msg' => '성공적으로 추가 되었습니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
     ///
@@ -491,7 +491,7 @@ class Member_submit{
                 'return' => 'alert->reload'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }

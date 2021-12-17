@@ -163,7 +163,7 @@ class Info_submit{
                 'msg' => '성공적으로 변경 되었습니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }

@@ -602,7 +602,7 @@ class Write_submit{
                         'err_code' => 'NOTMATCH_CAPTCHA'
                     )
                 );
-                Valid::return();
+                Valid::turn();
             }
         }
 
@@ -862,7 +862,7 @@ class Write_submit{
                 'location' => $req['thisuri'].'?mode=view&read='.$sql->fetch('idx').'&category='.urlencode($req['category_ed'])
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
     ///
@@ -942,7 +942,7 @@ class Write_submit{
                 'location' => $req['thisuri'].'?mode=view&read='.$req['read'].'&page='.$req['page'].'&where='.$req['where'].'&keyword='.$req['keyword'].'&category='.urlencode($req['category_ed'])
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
     ///
@@ -1080,7 +1080,7 @@ class Write_submit{
                 'location' => $req['thisuri'].'?mode=view&read='.$sql->fetch('idx').'&page='.$req['page'].'&where='.$req['where'].'&keyword='.$req['keyword'].'&category='.urlencode($req['category_ed'])
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }

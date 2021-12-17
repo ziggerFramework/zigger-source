@@ -286,7 +286,7 @@ class Result_clone_submit{
                 'msg' => '게시판이 성공적으로 복제 되었습니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }
@@ -551,7 +551,7 @@ class Regist_submit {
                 'location' => PH_MANAGE_DIR.'/mod/'.MOD_BOARD.'/result/modify?idx='.$idx
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }
@@ -849,7 +849,7 @@ class Modify_submit {
                 'msg' => '성공적으로 변경 되었습니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
     ///
@@ -916,7 +916,7 @@ class Modify_submit {
                 'location' => PH_MANAGE_DIR.'/mod/'.MOD_BOARD.'/result/result'.$manage->retlink('')
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
 }

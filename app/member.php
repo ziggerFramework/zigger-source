@@ -328,7 +328,7 @@ class Info_submit {
                 'msg' => '성공적으로 변경 되었습니다.'
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 
     ///
@@ -367,7 +367,7 @@ class Info_submit {
                 'location' => PH_DOMAIN,
             )
         );
-        Valid::return();
+        Valid::turn();
     }
 }
 
